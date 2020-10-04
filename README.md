@@ -70,11 +70,11 @@ This is a security feature that keeps control in your hands. Your server is resp
 
 	Responsible for showing credential input, authorization, authentication and a list of banks. You can receive callbacks by implementing `OnDapiConnectListener` interface.
 
-	```kotlin
+	```c#
   dapiClient.Connect.Present();
 	```
 
-	```kotlin
+	```c#
   dapiClient.Connect.SetOnConnectListener(new OnDapiConnectListener());
   
 	class OnDapiConnectListener : Java.Lang.Object, IOnDapiConnectListener
@@ -119,7 +119,7 @@ This is a security feature that keeps control in your hands. Your server is resp
     }
 	```
 	
-	```kotlin
+	```c#
 dapiClient.Connect.GetConnections(new OnGetConnectionsSuccess(), new OnGetConnectionsFailure());
 
  class OnGetConnectionsSuccess : Java.Lang.Object, Kotlin.Jvm.Functions.IFunction1
@@ -143,12 +143,12 @@ dapiClient.Connect.GetConnections(new OnGetConnectionsSuccess(), new OnGetConnec
 
 	You can use autoflow to display the connected accounts, balance for each subaccount and a numpad to make a transaction.
 
-	```kotlin
+	```c#
 dapiClient.AutoFlow.Present(null, 0);
 
 	```
 
-	```kotlin
+	```c#
 dapiClient.AutoFlow.SetOnTransferListener(new OnDapiTransferListener());
 class OnDapiTransferListener : Java.Lang.Object, IOnDapiTransferListener
     {
@@ -195,7 +195,7 @@ class OnDapiTransferListener : Java.Lang.Object, IOnDapiTransferListener
 
 	You can use these to use our functions separately and build your own flow and UI.
 
-	```kotlin
+	```c#
 		 dapiClient.Data.GetIdentity(new OnSuccess(), new OnFailure());
      dapiClient.Data.GetAccounts(new OnSuccess(), new OnFailure());
      dapiClient.Data.GetBalance(new OnSuccess(), new OnFailure());
@@ -210,6 +210,6 @@ class OnDapiTransferListener : Java.Lang.Object, IOnDapiTransferListener
 	
 Finally, you should release the SDK when your app closes using
 
-```kotlin
+```c#
 dapiClient.Release();
 ```
