@@ -34,7 +34,7 @@ This is a security feature that keeps control in your hands. Your server is resp
 
 1. Initialize the SDK 
 
-	```kotlin
+	```c#
 	 DapiConfigurations dapiConfigurations = new DapiConfigurations(
             appKey, //Your app key
             baseUrl,
