@@ -71,11 +71,11 @@ This is a security feature that keeps control in your hands. Your server is resp
 	Responsible for showing credential input, authorization, authentication and a list of banks. You can receive callbacks by implementing `OnDapiConnectListener` interface.
 
 	```c#
-  dapiClient.Connect.Present();
+  	dapiClient.Connect.Present();
 	```
 
 	```c#
-  dapiClient.Connect.SetOnConnectListener(new OnDapiConnectListener());
+  	dapiClient.Connect.SetOnConnectListener(new OnDapiConnectListener());
   
 	class OnDapiConnectListener : Java.Lang.Object, IOnDapiConnectListener
     {
@@ -120,23 +120,23 @@ This is a security feature that keeps control in your hands. Your server is resp
 	```
 	
 	```c#
-dapiClient.Connect.GetConnections(new OnGetConnectionsSuccess(), new OnGetConnectionsFailure());
+	dapiClient.Connect.GetConnections(new OnGetConnectionsSuccess(), new OnGetConnectionsFailure());
 
- class OnGetConnectionsSuccess : Java.Lang.Object, Kotlin.Jvm.Functions.IFunction1
-    {
-        public Java.Lang.Object Invoke(Java.Lang.Object p0)
-        {
-            return p0;
-        }
-    }
+ 	class OnGetConnectionsSuccess : Java.Lang.Object, Kotlin.Jvm.Functions.IFunction1
+    	{
+        	public Java.Lang.Object Invoke(Java.Lang.Object p0)
+        	{
+            	return p0;
+        	}
+    	}
 
-    class OnGetConnectionsFailure : Java.Lang.Object, Kotlin.Jvm.Functions.IFunction1
-    {
-        public Java.Lang.Object Invoke(Java.Lang.Object p0)
-        {
-            return p0;
-        }
-    }
+    	class OnGetConnectionsFailure : Java.Lang.Object, Kotlin.Jvm.Functions.IFunction1
+    	{
+        	public Java.Lang.Object Invoke(Java.Lang.Object p0)
+        	{
+            	return p0;
+        	}
+    	}
 	 ```
 
 2. DapiAutoFlow
@@ -144,37 +144,37 @@ dapiClient.Connect.GetConnections(new OnGetConnectionsSuccess(), new OnGetConnec
 	You can use autoflow to display the connected accounts, balance for each subaccount and a numpad to make a transaction.
 
 	```c#
-dapiClient.AutoFlow.Present(null, 0);
+	dapiClient.AutoFlow.Present(null, 0);
 
 	```
 
 	```c#
-dapiClient.AutoFlow.SetOnTransferListener(new OnDapiTransferListener());
-class OnDapiTransferListener : Java.Lang.Object, IOnDapiTransferListener
-    {
-        public void OnAutoFlowFailure(DapiError error, string senderAccountID, string recipientAccountID)
-        {
+	dapiClient.AutoFlow.SetOnTransferListener(new OnDapiTransferListener());
+	class OnDapiTransferListener : Java.Lang.Object, IOnDapiTransferListener
+    	{
+        	public void OnAutoFlowFailure(DapiError error, string senderAccountID, string recipientAccountID)
+        	{
 
-        }
+        	}
 
-        public void OnAutoFlowSuccessful(double amount, string senderAccountID, string recipientAccountID, string jobID)
-        {
+        	public void OnAutoFlowSuccessful(double amount, string senderAccountID, string recipientAccountID, string jobID)
+        	{
 
-        }
+        	}
 
-        public void OnPaymentStarted(string bankID)
-        {
+        	public void OnPaymentStarted(string bankID)
+        	{
 
-        }
+        	}
 
-        public DapiBeneficiaryInfo SetBeneficiaryInfoOnAutoFlow(string bankID)
-        {
-            LinesAddress lineAddress = new LinesAddress();
-            lineAddress.Line1 = "line1";
-            lineAddress.Line2 = "line2";
-            lineAddress.Line3 = "line3";
+        	public DapiBeneficiaryInfo SetBeneficiaryInfoOnAutoFlow(string bankID)
+        	{
+            	LinesAddress lineAddress = new LinesAddress();
+            	lineAddress.Line1 = "line1";
+            	lineAddress.Line2 = "line2";
+            	lineAddress.Line3 = "line3";
 
-            DapiBeneficiaryInfo info = new DapiBeneficiaryInfo(
+            	DapiBeneficiaryInfo info = new DapiBeneficiaryInfo(
                 lineAddress,
                 "xxxxxxxxx",
                 "xxxxx",
@@ -185,7 +185,7 @@ class OnDapiTransferListener : Java.Lang.Object, IOnDapiTransferListener
                 "branchAddress",
                 "branchName",
                 "xxxxxxxxxxx"
-            );
+            	);
 
             return info;
         }
