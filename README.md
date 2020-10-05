@@ -130,7 +130,7 @@ This is a security feature that keeps control in your hands. Your server is resp
         	}
     	}
 
-    	class OnGetConnectionsFailure : Java.Lang.Object, Kotlin.Jvm.Functions.IFunction1
+   class OnGetConnectionsFailure : Java.Lang.Object, Kotlin.Jvm.Functions.IFunction1
     	{
         	public Java.Lang.Object Invoke(Java.Lang.Object p0)
         	{
@@ -206,8 +206,10 @@ This is a security feature that keeps control in your hands. Your server is resp
      dapiClient.Payment.GetBeneficiaries(new OnSuccess(), new OnFailure());
      dapiClient.Metadata.GetAccountMetaData(new OnSuccess(), new OnFailure());
      dapiClient.Auth.Delink(new OnSuccess(), new OnFailure());
+     //	where OnSuccess and OnFailure are classes that extend Java.Lang.Object, Kotlin.Jvm.Functions.IFunction1
 	```
 	
+
 Finally, you should release the SDK when your app closes using
 
 ```c#
