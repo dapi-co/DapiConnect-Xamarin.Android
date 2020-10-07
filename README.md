@@ -18,7 +18,7 @@ The SDK provides direct access to Dapi endpoints and offers optional UI to manag
 
 ## Integration
 
-
+https://www.nuget.org/packages/DapiConnect-Xamarin.Android/
 
 
 ## How it Works
@@ -30,7 +30,7 @@ DapiConnect SDK communicates with API endpoints to make network requests. Reques
 
 This is a security feature that keeps control in your hands. Your server is responsible for maintaining access tokens by creating, storing, and refreshing them.
 
-## Integration
+## Usage
 
 1. Initialize the SDK 
 
@@ -40,7 +40,6 @@ This is a security feature that keeps control in your hands. Your server is resp
             baseUrl,
             environment, //DapiEnvironment.SANDBOX or DapiEnvironment.PRODUCTION
             supportedCountriesCodes, //List of supported countries, fill up the countries you want to support using two-letter country codes (ISO 3166-1 alpha-2)
-            autoTruncate, //OPTIONAl. to auto truncate beneficiary and transfer info 
             clientUserID, //OPTIONAL. your user ID, used to destinguish between different users on the same device
             userID, //OPTIONAL. you can obtain userID using dapiApp.connect.getConnections. Initially it will be null, but you can use this as the default userID afterwards.
             isExperimental, //OPTIONAL. for showing experimental banks.
@@ -48,7 +47,9 @@ This is a security feature that keeps control in your hands. Your server is resp
             extraHeaders, //OPTIONAL. Headers to add to all requests
             extraParams, //OPTIONAL. Params to add to all requests
             extraBody, //OPTIONAL. Body to add to all requests
-            dapiEndPoints //OPTIONAL. DapiEndpoints settings object for different endpoints
+            dapiEndPoints, //OPTIONAL. DapiEndpoints settings object for different endpoints
+	    autoTruncate, //OPTIONAl. to auto truncate beneficiary and transfer info 
+
         );
 
             DapiClient dapiClient = new DapiClient(this.Application, dapiConfigurations);
