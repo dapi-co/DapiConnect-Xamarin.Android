@@ -48,7 +48,7 @@ This is a security feature that keeps control in your hands. Your server is resp
             extraParams, //OPTIONAL. Params to add to all requests
             extraBody, //OPTIONAL. Body to add to all requests
             dapiEndPoints, //OPTIONAL. DapiEndpoints settings object for different endpoints
-	    autoTruncate, //OPTIONAl. to auto truncate beneficiary and transfer info 
+	    autoTruncate //OPTIONAl. to auto truncate beneficiary and transfer info 
 
         );
 
